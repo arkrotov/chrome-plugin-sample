@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="popup.js"></script>				
+</head>
+<body>
+	<button id="parseBtn" type="button">Parsing...</button>
+	<form name="forma" method="post" action="obrabotchik-forma.php">
+		Введите ФИО: <br>
+		<input type="text" name="fio" size="20" maxlength="50" value="Введите текст">
+		<br>
+		Введите пароль: <br>
+		<input type="password" name ="pass" size="20" maxlength="6">
+		<p>Выберите способ доставки:</p>
+		<p>
+		<select name="dostavka">
+			<option value="ne-srochnaya"> Не срочная </option>
+			<option value="srochnaya"> Срочная </option>
+			<option value="kurierom"> Курьером </option>
+		</select>
+		<p>Какие уроки языка вы хотите видеть на диске?</p>
+		<input type="checkbox" name="english" value="yes" checked>
+			Уроки английского <br>
+		<input type="checkbox" name="french" value="yes">
+			Уроки французкого<br>
+		<input type="checkbox" name="german" value="yes" checked >
+			Уроки нимецкого
+		</p>
+		<input type="submit" value="Сделать заказ">
+		<input type="reset" value="Отмена">
+	</form>
+
+	
+</body>
+</html>

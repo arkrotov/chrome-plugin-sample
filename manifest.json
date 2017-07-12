@@ -1,0 +1,38 @@
+{
+	"manifest_version": 2,
+	"name" : "Hello world", //Название расширения
+	"version" : "0.0.1", //Версия
+	"description" : "This is a simple chrome extention", //Краткое описание
+
+    // иконка нашего расширения в chrome://extensions/
+    "icons": {
+        "48": "/images/icon.png"
+    },
+
+    // http://www.cyberforum.ru/javascript-api/thread1217611.html	
+	"content_scripts": [
+       {
+            //"matches": [ "http://*/*" ], // на каких страницах должен выполняться наш скрипт
+            "matches": [ "http://rusvesna.su/*" ], // на каких страницах должен выполняться наш скрипт
+            "js": [ "content_scripts/end.js" ], // список путей к нашим пользовательским скриптам
+            "run_at": "document_end" // указывает, на каком этапе загрузки страницы скрипт будет выполняться.
+       }
+    ],
+
+    // Добавление кнопочки расширения на панель инструментов в браузере
+	"browser_action" : {
+		"default_title" : "Hello world!!!", //Текст, всплывающий при наведении курсора на иконку (если не задан, то всплывает название расширения)
+		"default_icon" : "images/icon.png", //Иконка для панели расширений (по умолчанию)
+		"default_popup" : "popup/popup.html" // страница появл во всплывающем окне откр при нажатии на кнопку
+	},
+
+	"background" : {
+        "page": "background.html"
+    },
+
+	"permissions": [
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ]
+}
