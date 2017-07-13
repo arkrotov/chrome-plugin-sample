@@ -15,6 +15,13 @@ var observer = new MutationObserver(function(mutations) {
         for (let obj of match) {
             console.log(obj)
         }
+
+
+        var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
+        xmlhttp.open("POST", "10.20.30.40:8080");
+        xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xmlhttp.send(JSON.stringify({ time: match[0], owner: match[1], type: match[2], name: match[3] }));
+
     });
 });
 
