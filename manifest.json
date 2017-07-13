@@ -13,8 +13,8 @@
 	"content_scripts": [
        {
             //"matches": [ "http://*/*" ], // на каких страницах должен выполняться наш скрипт
-            "matches": [ "http://rusvesna.su/*" ], // на каких страницах должен выполняться наш скрипт
-            "js": [ "content_scripts/end.js" ], // список путей к нашим пользовательским скриптам
+            "matches": [ "https://www.ageofclones.com/stash/summaryAll/type/2", "https://www.ageofclones.com/stash/summaryAll" ], // на каких страницах должен выполняться наш скрипт
+            "js": [ "content_scripts/listener.js" ], // список путей к нашим пользовательским скриптам
             "run_at": "document_end" // указывает, на каком этапе загрузки страницы скрипт будет выполняться.
        }
     ],
