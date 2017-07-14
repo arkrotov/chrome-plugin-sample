@@ -9,6 +9,10 @@ var observer = new MutationObserver(function(mutations) {
     var matches = [];
     mutations.forEach(function(mutation) {
         string = mutation.nextSibling;
+        if (string === null){
+            console.log("Hello", string);
+            return;
+        }
         let innerText = string.innerText;
         console.log(innerText);
         let match = innerText.match("(.*) Банда .*\nВладелец  (.*)  (.*)  (.*)");
